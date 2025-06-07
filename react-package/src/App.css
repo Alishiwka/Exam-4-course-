@@ -1,0 +1,68 @@
+:root {
+    --primary: #96C3EB;
+    --light: #FFFFFF;
+    --danger: #FF8585;
+    ---dark: #000000;
+    --secondary: #9B9B9B;
+}
+
+button {
+  all: unset; /* Полный сброс всех свойств */
+  cursor: pointer; /* Возвращаем курсор-указатель */
+}
+
+.btn-secondary{
+    padding: auto;
+    border: 1px solid #9b9b9b69;
+    border-radius: 10px;
+    height: 36px;
+    width: 36px;
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+    background-color: var(--light);
+}
+
+.btn-secondary img{
+    height: 16px;
+    width: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  background-color: var(--primary); 
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 70px auto;
+  background-color: var(--light);
+  border-radius: 30px;
+}
+
+h5{
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.items-conatiner{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+    justify-items: left;
+    
+    max-width: 1200px; 
+    padding: 30px 0;
+    margin: 0 auto;
+}
