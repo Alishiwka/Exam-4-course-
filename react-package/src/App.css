@@ -10,6 +10,9 @@ button {
   all: unset; /* Полный сброс всех свойств */
   cursor: pointer; /* Возвращаем курсор-указатель */
 }
+.img-border-20{
+  border-radius: 19px;
+}
 
 .btn-secondary{
     padding: auto;
