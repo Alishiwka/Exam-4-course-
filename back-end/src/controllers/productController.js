@@ -1,41 +1,44 @@
-const clothesData = require('../data/clothes/products.json');
-const electronicData = require('../data/electronic/products.json');
-const foodData = require('../data/food/products.json');
-const fruitsData = require('../data/fruits/products.json');
+const clothesData = require('../data/clothes/products.json')
+const electronicData = require('../data/electronic/products.json')
+const foodData = require('../data/food/products.json')
+const fruitsData = require('../data/fruits/products.json')
 
 const productController = (req, res) => {
-    const { search, category } = req.query
+    const {search, category} = req.query
 
-    products = [];
+    let products = []
 
     switch(category){
-        case 'clothes': 
+        case'clothes':
             products = [...clothesData]
             break;
-        case 'electronic': 
+        case'electronic':
             products = [...electronicData]
             break;
-        case 'food': 
+        case'food':
             products = [...foodData]
             break;
-        case 'fruits': 
+        case'fruits':
             products = [...fruitsData]
             break;
-        default: 
+        default:
             products = [...clothesData, ...electronicData, ...foodData, ...fruitsData]
     }
 
+
     if(search){
-        item = search.toLowerCase();
-        products = products.filter(p => 
-            p.title.toLowerCase().includes(item)
-        )
+        i = search.toLowerCase()
+        products = products.filter(p => p.title.toLowerCase().includes(i))
     }
 
-    // Важно что не return
-    res.json(products)
+    products = products.map(p => ({
+        ...p,
+        price: +p.price,
+        image: p.image.replace('./', '/')
+    }))
 
+
+    res.json(products)
 }
 
-module.exports = { productController }
-
+module.exports = {productController}

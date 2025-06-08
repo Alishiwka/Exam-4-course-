@@ -1,6 +1,7 @@
 import Product from './components/Product'
 import plusBtn from './assets/icons/plus.svg'
 import likeBtn from './assets/icons/like.svg'
+import img from './assets/data/products/electronic/1.jpg'
 
 import './App.css'
 
@@ -9,21 +10,11 @@ function App() {
     <>  
       <div className='container'>
         <div className="items-conatiner">
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
+          <Product 
+            title="Наушники"
+            price={15000}
+            image={img}
+          />
         </div>
       </div>
     </>
